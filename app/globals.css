@@ -2,26 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html{
+
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+* {
+  transition: filter 0.3s ease-in-out, color 0.05s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.works{
+  transition: all 0.3s ease-in-out;
+}
+
+.marquee {
+  --gap: 3rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+}
+
+.marquee__content {
+  animation: scroll1 14s linear infinite;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+}.marquee__content2 {
+  animation: scroll2 14s linear infinite;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+}
+
+
+.vr{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+@keyframes scroll1 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}@keyframes scroll2 {
+  from {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+@layer base {
+  :root{
+    --main:28, 22%, 92%;
+    --text:0, 0%, 5%;
+  }
+
+  .darkmode {
+    --text:28, 22%, 92%;
+    --main:0, 0%, 5%;
+  }
+
 }
