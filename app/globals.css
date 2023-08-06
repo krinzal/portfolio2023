@@ -2,13 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-
-  scroll-behavior: smooth;
-}
 
 * {
   transition: filter 0.3s ease-in-out, color 0.05s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 .works{

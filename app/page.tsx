@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import LocalFont from "next/font/local";
 const stylish = LocalFont({ src: "../assets/fonts/mitera.otf" });
 import { delay, motion } from "framer-motion";
@@ -16,9 +17,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Imgreveal from "@/components/img";
 import Imgscale from "@/components/imgscale";
-
+import Lenis from "@studio-freight/lenis";
 export default function Home() {
+  useEffect(() => {
+    const lenis = new Lenis(
+      {duration:3, smoothTouch:true}
+    );
 
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   const [Theme, setTheme] = useState("");
   return (
@@ -63,10 +75,10 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.6 }}
             className="w-3"
           >
-            <Link href="https://www.youtube.com/channel/UC0kc72Ix5B3NchytoT88dJA">
+            <Link href="https://discord.com/users/1034313558017712128">
               <FontAwesomeIcon
-                icon={faYoutube}
-                className="text-mainw md:text-2xl"
+                icon={faDiscord}
+                className="text-mainw md:text-2xl "
               />
             </Link>
           </motion.div>
@@ -83,21 +95,21 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.6 }}
             className="w-3"
           >
-            <Link href="https://discord.com/users/1034313558017712128">
+            <Link href="https://github.com/krinzal">
               <FontAwesomeIcon
-                icon={faDiscord}
-                className="text-mainw md:text-2xl "
+                icon={faGithub}
+                className="text-mainw md:text-2xl"
               />
             </Link>
           </motion.div>
         </div>
 
         <div className="whatido flex flex-col items-start text-left p-2 mt-20 text-[7.2vw] leading-[7.35vw] md:text-[3.4vw] uppercase md:leading-[3.65vw]">
-          <Reveal>I work with Studios,</Reveal>
-          <Reveal>Agencies or Whoever</Reveal>
-          <Reveal>Wants To build</Reveal>
-
-          <Reveal>Awesome Website.</Reveal>
+  <Reveal>I am currently</Reveal>
+  <Reveal>exploring, learning,</Reveal>
+  <Reveal>and trying to build</Reveal>
+  
+  <Reveal> some Amazing Websites.</Reveal>
         </div>
 
         <div
@@ -248,38 +260,45 @@ export default function Home() {
 
         <div className="flex md:flex-row flex-col justify-between items-center">
           <Reveal>
-
-          <div>
-            <p>krinzal@duck.com</p>
-          </div>
+            <div>
+              <p>krinzal@duck.com</p>
+            </div>
           </Reveal>
           <div className="flex gap-4">
-
             <Reveal>
-            <Link href="https://www.youtube.com/channel/UC0kc72Ix5B3NchytoT88dJA">
-              <FontAwesomeIcon
-                icon={faYoutube}
-                className="text-mainw md:text-xl"
+              <Link href="https://www.youtube.com/channel/UC0kc72Ix5B3NchytoT88dJA">
+                <FontAwesomeIcon
+                  icon={faYoutube}
+                  className="text-mainw md:text-xl"
                 />
-            </Link>
-                </Reveal>
+              </Link>
+            </Reveal>
 
             <Reveal>
-            <Link href="https://discord.com/users/1034313558017712128">
-              <FontAwesomeIcon
-                icon={faDiscord}
-                className="text-mainw md:text-xl "
-              />
-            </Link>
+              <Link href="https://discord.com/users/1034313558017712128">
+                <FontAwesomeIcon
+                  icon={faDiscord}
+                  className="text-mainw md:text-xl "
+                />
+              </Link>
             </Reveal>
-            
+
             <Reveal>
-            <Link href="https://www.instagram.com/krinzal_46/">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="text-mainw md:text-xl "
-              />
-            </Link>
+              <Link href="https://www.instagram.com/krinzal_46/">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="text-mainw md:text-xl "
+                />
+              </Link>
+            </Reveal>
+
+            <Reveal>
+              <Link href="https://github.com/krinzal">
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="text-mainw md:text-xl "
+                />
+              </Link>
             </Reveal>
           </div>
         </div>
