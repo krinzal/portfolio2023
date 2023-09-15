@@ -21,7 +21,7 @@ import Lenis from "@studio-freight/lenis";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis(
-      {duration:3, smoothTouch:true}
+      {duration:3 }
     );
 
     function raf(time: number) {
@@ -42,12 +42,12 @@ export default function Home() {
           className={`flex w-screen  items-center uppercase px-[6.3vw] py-[3.4vw] lg:py-[1.4vw] lg:text-[1.5vw] lg:leading-[1.6vw] leading-[2.6vw] text-[2.5vw] justify-between`}
         >
           <h1>Krinzal</h1>
-          <h1>Web Developer</h1>
+          <h1>An explorer</h1>
         </div>
       </Reveal>
 
       <div className="main w-full pl-8 pr-12 overflow-hidden">
-        {/* <p className="py-4 text-center mb-4 text-3xl ">Hi I am Ruff !</p> */}
+        {/* <p className="py-4 text-center mb-4 text-3xl ">Hi I am Krinzal !</p> */}
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -58,14 +58,14 @@ export default function Home() {
           <h1
             className={`${stylish.className} marquee__content text-[17vw] lg:text-[11.5vw]`}
           >
-            {" "}
-            Take action{" "}
+            
+            Hi there!
           </h1>
           <h1
             className={`${stylish.className} marquee__content text-[17vw] lg:text-[11.5vw]`}
           >
-            {" "}
-            Take action{" "}
+            
+            Hi there!
           </h1>
         </motion.div>
         <div className="lg:mt-32 flex justify-between items-center">
@@ -105,10 +105,10 @@ export default function Home() {
         </div>
 
         <div className="whatido flex flex-col items-start text-left p-2 mt-20 text-[7.2vw] leading-[7.35vw] md:text-[3.4vw] uppercase md:leading-[3.65vw]">
-  <Reveal>I am currently</Reveal>
+  <Reveal>I am krinzal</Reveal>
+  <Reveal>and i am currently</Reveal>
   <Reveal>exploring, learning,</Reveal>
   <Reveal>and trying to build</Reveal>
-  
   <Reveal> some Amazing Websites.</Reveal>
         </div>
 
